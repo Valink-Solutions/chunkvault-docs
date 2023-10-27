@@ -17,10 +17,12 @@ ChunkVault uses ZSTD for creating backups. However, when creating a backup, it u
 
 For instance, if the same world exists in two instances and gets backed up, their snapshot gets uploaded into the same backup destination. This could create issues when the user wants to have version-controlled worlds. We are aware of this issue and are working on a solution. In the meantime, we recommend users to be mindful of this when restoring worlds.
 
+## World Conversion & Corruption
+
+Currently, there are no known instances of corruption in ChunkVault. As for converting worlds between Bedrock and Java, this feature does not exist as it is not the primary function of ChunkVault. However, if there is enough demand from the community in the future, our developers may consider adding this feature.
+
 ## Future Improvements
 
 We are planning to implement a database system for managing Minecraft worlds. This will make the backup and restore system more robust and smooth, eliminating the risk of worlds being mishandled. 
 
 The new system will also pave the way for automatic backups, a feature that is currently not available. We believe this improvement will greatly enhance the user experience and provide a more reliable and efficient way of managing Minecraft worlds in ChunkVault.
-
-
