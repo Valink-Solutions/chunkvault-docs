@@ -1,6 +1,6 @@
 ---
-    title: Getting Started
-    description: A step-by-step guide on how to get started with CommandBlock.
+title: Getting Started
+description: A step-by-step guide on how to get started with CommandBlock.
 ---
 
 ## What is CommandBlock?

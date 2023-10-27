@@ -22,6 +22,7 @@ export default defineConfig({
 				{ label: 'ChunkVault Desktop', autogenerate: { directory: 'teller' } },
 				{ label: 'Vault Server', autogenerate: { directory: 'vault' } },
 				{ label: 'CommandBlock Library', autogenerate: { directory: 'commandblock' } },
+				{ label: 'YamAPI', autogenerate: { directory: 'yamapi' } },
 			],
 		}),
 	],

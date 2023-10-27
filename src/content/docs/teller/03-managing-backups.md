@@ -1,6 +1,6 @@
 ---
-    title: Managing Backups
-    description: A step-by-step guide on how to create backups in ChunkVault Desktop.
+title: Managing Backups
+description: A step-by-step guide on how to create backups in ChunkVault Desktop.
 ---
 
 ### Creating Backups

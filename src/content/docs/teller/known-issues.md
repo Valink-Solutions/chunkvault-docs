@@ -1,6 +1,6 @@
 ---
-    title: Known Issues
-    description: A list of known issues with ChunkVault Desktop.
+title: FAQ & Issues
+description: A list of known issues with ChunkVault Desktop.
 ---
 
 ## Rendering Issues
