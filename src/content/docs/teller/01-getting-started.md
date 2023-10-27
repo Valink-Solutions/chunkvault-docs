@@ -1,0 +1,37 @@
+---
+title: Getting Starting
+description: A step-by-step guide on how to install ChunkVault Desktop.
+---
+
+## What is ChunkVault Desktop?
+
+The desktop client for ChunkVault, this allows for local backups, private server backups and public ChunkVault backups, meaning this client will be an all in one tool allowing for the backing up of minecraft worlds, while The Vault Backend will be the means of securily storing world backups in the cloud.
+
+## Prerequisites
+
+ChunkVault Desktop is available for Windows, macOS, and Linux. To install the application, you will need to ensure that you have the following:
+
+- A version of Minecraft installed on your system. ChunkVault supports both Java Edition and Bedrock Edition, you can [get Minecraft here](https://www.minecraft.net/en-us/store/minecraft-java-bedrock-edition-pc).
+
+- Other launchers that you may have installed on your system, such as the [Prism Launcher](https://prism.launcher.gg/) or the [Modrinth Launcher](https://modrinth.com/launcher).
+
+## Installation
+
+To install the ChunkVault Desktop application, follow the steps below:
+
+1. Visit the [ChunkVault Desktop releases page](https://github.com/Valink-Solutions/teller/releases) on GitHub.
+
+2. Download the latest release suitable for your platform.
+
+3. Run the installer. *Note that the program is not signed for any platform as of now, so you might see a warning. Proceed with the installation.*
+
+4. Upon launching ChunkVault, it will automatically detect the default Minecraft saves location for your platform If it doesn't, you will need to manually add instances.
+
+5. To add instances, click on the gear icon. Our directories modal will allow you to add a directory that holds multiple instances of Minecraft, such as Modrinth Launcher or Prism Launcher instances.
+
+6. ChunkVault will attempt to search the provided directory for all Minecraft instances, allowing you to categorize instances by the launcher they are in.
+
+
+## Troubleshooting
+
+If you are having trouble installing ChunkVault Desktop, please create a new issue on our [GitHub repository](https://github.com/Valink-Solutions/teller/issues/new/choose) and we will get back to you as soon as possible.
