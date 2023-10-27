@@ -15,6 +15,7 @@ export default defineConfig({
 				github: 'https://github.com/valink-solutions',
 				twitter: 'https://twitter.com/ChunkVault',
 				"x.com": 'https://twitter.com/valink',
+				discord: "https://discord.gg/k3yjVarAtA"
 			},
 			favicon: '/favicon.ico',
 			sidebar: [
