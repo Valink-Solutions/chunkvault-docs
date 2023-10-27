@@ -35,3 +35,5 @@ To install the ChunkVault Desktop application, follow the steps below:
 ## Troubleshooting
 
 If you are having trouble installing ChunkVault Desktop, please create a new issue on our [GitHub repository](https://github.com/Valink-Solutions/teller/issues/new/choose) and we will get back to you as soon as possible.
+
+Alternatively, you can join our [Discord server](https://discord.gg/k3yjVarAtA) where our community can help you troubleshoot any issues you may encounter.
