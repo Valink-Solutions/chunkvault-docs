@@ -42,6 +42,22 @@ The Teller project is a mono-repo housing both the Teller library and the Teller
 *   Update the documentation if necessary to reflect your changes.
 *   Be open to feedback from the maintainers and other contributors, and be prepared to make changes to your pull request if requested.
 
+## Versioning
+
+We use semantic versioning for our project. Here's a brief overview of what each type of version change signifies:
+
+*   *0.1.0* - Minor versions: These introduce new features or enhancements that are backward-compatible.
+*   *0.1.1* - Patch versions: These include bug fixes or patches that are also backward-compatible.
+*   *1.0.0* - Major versions: These represent significant milestones and introduce major new features. They may not be backward-compatible. For example, a full release of ChunkVault with all its features would be a major version.
+
+### Pre-release Versions
+
+Pre-release versions are primarily intended for the releases page on GitHub and are not used for library versioning. They follow a specific naming convention to indicate their pre-release status.
+
+*   Alpha releases: These are early pre-release versions, indicated by tags like v0.1.1-alpha or 0.2.0-alpha.
+*   Beta releases: These are later pre-release versions, closer to the final release.
+*   Release candidates: These are versions that are potentially ready for final release, tagged with labels like 1.0.0-rc.
+
 ## Bug Reports and Feature Requests
 
 *   Before submitting a bug report or feature request, search the existing issues to see if it has already been reported or requested.
