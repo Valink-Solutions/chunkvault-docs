@@ -1,0 +1,17 @@
+---
+import DownloadButton from "./download_button.svelte";
+---
+
+<div class="bg-gradient-to-r from-indigo-600 to-indigo-800 p-6 rounded-lg shadow-md flex flex-col md:flex-row items-center justify-between w-full">
+    <div class="flex flex-col text-white gap-1 items-center md:items-start">
+        <span class="text-xl lg:text-2xl font-semibold">Get ChunkVault Desktop Now!</span>
+        <p class="text-xs lg:text-sm">Your essential Minecraft world backup tool.</p>
+    </div>
+
+    <div class="flex flex-col items-center md:items-end gap-1 top-0">
+        <DownloadButton />
+        <a class="text-xs" style="color: white;" href="http://github.com/valink-solutions/teller/releases">
+            See more downloads.
+        </a>        
+    </div>
+</div>
