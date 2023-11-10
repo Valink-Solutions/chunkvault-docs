@@ -19,7 +19,7 @@ export default defineConfig({
     social: {
       github: 'https://github.com/valink-solutions',
       twitter: 'https://twitter.com/ChunkVault',
-      "x.com": 'https://twitter.com/valink',
+      "x.com": 'https://twitter.com/valink_io',
       discord: "https://discord.gg/k3yjVarAtA"
     },
     favicon: '/favicon.ico',
