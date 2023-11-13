@@ -3,10 +3,6 @@ title: Getting Started
 description: A step-by-step guide on how to install ChunkVault Desktop.
 ---
 
-import DownloadBanner from '../../../components/download_banner.astro'
-
-<DownloadBanner />
-
 ## What is ChunkVault Desktop?
 
 The desktop client for ChunkVault, this allows for local backups, private server backups and public ChunkVault backups, meaning this client will be an all in one tool allowing for the backing up of minecraft worlds, while The Vault Backend will be the means of securily storing world backups in the cloud.
@@ -27,14 +23,13 @@ To install the ChunkVault Desktop application, follow the steps below:
 
 2. Download the latest release suitable for your platform.
 
-3. Run the installer. *Note that the program is not signed for any platform as of now, so you might see a warning. Proceed with the installation.*
+3. Run the installer. _Note that the program is not signed for any platform as of now, so you might see a warning. Proceed with the installation._
 
 4. Upon launching ChunkVault, it will automatically detect the default Minecraft saves location for your platform If it doesn't, you will need to manually add instances.
 
 5. To add instances, click on the gear icon. Our directories modal will allow you to add a directory that holds multiple instances of Minecraft, such as Modrinth Launcher or Prism Launcher instances.
 
 6. ChunkVault will attempt to search the provided directory for all Minecraft instances, allowing you to categorize instances by the launcher they are in.
-
 
 ## Troubleshooting
 

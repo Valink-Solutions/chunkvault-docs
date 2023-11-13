@@ -1,17 +1,47 @@
 ---
+import { Image } from "astro:assets";
 import DownloadButton from "./download_button.svelte";
+import ChunkVaultScreenshot from "../assets/ChunkVault-Desktop-Marketing-SS.png";
+
+const response = await fetch("http://releases.chunkvault.com/total_downloads", {
+  mode: "no-cors",
+  redirect: "error",
+});
+if (!response.ok) {
+  throw new Error(`HTTP error! Status: ${response.status}`);
+}
+const data = await response.json();
+const totalDownloads = data.total_downloads;
 ---
 
-<div class="bg-gradient-to-r from-indigo-600 to-indigo-800 p-6 rounded-lg shadow-md flex flex-col md:flex-row items-center justify-between w-full">
-    <div class="flex flex-col text-white gap-1 items-center md:items-start">
-        <span class="text-xl lg:text-2xl font-semibold">Get ChunkVault Desktop Now!</span>
-        <p class="text-xs lg:text-sm">Your essential Minecraft world backup tool.</p>
+<div
+  class="card lg:card-side card-compact bg-base-100 border-5 p-6 shadow-md flex flex-col items-center justify-between w-full gap-4"
+>
+  <figure>
+    <Image src={ChunkVaultScreenshot} alt="ChunkVault Desktop for MacOS" />
+  </figure>
+  <div class="flex flex-col items-center justify-center gap-4">
+    <div
+      class="flex flex-col text-base-content gap-1 items-center md:items-start"
+    >
+      <span class="text-xl lg:text-2xl font-semibold"
+        >Get ChunkVault Desktop</span
+      >
+      <p class="text-xs lg:text-sm">
+        Join the
+        <span class="font-bold underline">{totalDownloads}</span>
+         others in downloading now.
+      </p>
     </div>
 
-    <div class="flex flex-col items-center md:items-end gap-1 top-0">
-        <!-- <DownloadButton /> -->
-        <a class="text-xs" style="color: white;" href="http://github.com/valink-solutions/teller/releases">
-            See more downloads.
-        </a>        
+    <div class="flex flex-col items-center md:items-end gap-2 top-0">
+      <DownloadButton client:load />
+      <a
+        class="text-xs"
+        href="http://github.com/valink-solutions/teller/releases"
+      >
+        <span class="text-base-content">See more downloads.</span>
+      </a>
     </div>
+  </div>
 </div>

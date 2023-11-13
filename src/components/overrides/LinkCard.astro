@@ -1,0 +1,21 @@
+---
+import { Icon } from "@astrojs/starlight/components";
+import type { HTMLAttributes } from "astro/types";
+
+interface Props extends Omit<HTMLAttributes<"a">, "title"> {
+  title: string;
+  description?: string;
+}
+
+const { title, description, ...attributes } = Astro.props;
+---
+
+<div>
+  <span class="card">
+    <a {...attributes}>
+      <span class="title" set:html={title} />
+    </a>
+    {description && <span class="description" set:html={description} />}
+  </span>
+  <Icon name="right-arrow" size="1.333em" class="icon rtl:flip" />
+</div>

@@ -1,0 +1,63 @@
+---
+import { useTranslations } from "./utils/translations";
+import { Icon } from "@astrojs/starlight/components";
+import type { Props } from "@astrojs/starlight/props";
+
+const { dir, locale, pagination } = Astro.props;
+const { prev, next } = pagination;
+const isRtl = dir === "rtl";
+const t = useTranslations(locale);
+---
+
+<div class="pagination-links" dir={dir}>
+  {
+    prev && (
+      <a
+        href={prev.href}
+        rel="prev"
+        class="card bg-base-100 no-underline text-base-content"
+      >
+        <div class="card-body flex flex-col items-end w-full">
+          <h2 class="card-title">{t("page.previousLink")}</h2>
+          <div class="flex flex-row items-center justify-between w-full">
+            <Icon name={isRtl ? "right-arrow" : "left-arrow"} size="1.5rem" />
+            <span class="underline">{prev.label}</span>
+          </div>
+        </div>
+      </a>
+    )
+  }
+  {
+    next && (
+      <a
+        href={next.href}
+        rel="next"
+        class="card bg-base-100 no-underline text-base-content"
+      >
+        <div class="card-body flex flex-col">
+          <h2 class="card-title">{t("page.nextLink")}</h2>
+          <div class="flex flex-row items-center justify-between w-full">
+            <Icon
+              name={isRtl ? "left-arrow" : "right-arrow"}
+              size="1.5rem"
+              class="order-2"
+            />
+            <span class="underline">{next.label}</span>
+          </div>
+        </div>
+      </a>
+    )
+  }
+</div>
+
+<style>
+  .pagination-links {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(18rem, 100%), 1fr));
+    gap: 1rem;
+  }
+
+  svg {
+    flex-shrink: 0;
+  }
+</style>

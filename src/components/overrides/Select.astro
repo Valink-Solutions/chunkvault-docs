@@ -1,0 +1,68 @@
+---
+import { Icon } from "@astrojs/starlight/components";
+
+interface Props {
+  label: string;
+  value: string;
+  icon: Parameters<typeof Icon>[0]["name"];
+  width?: string;
+  options: Array<{
+    label: string;
+    value: string;
+    selected: boolean;
+  }>;
+}
+---
+
+<label class="form-control">
+  <span class="sr-only">{Astro.props.label}</span>
+  <select
+    value={Astro.props.value}
+    class="select select-bordered text-base-content"
+  >
+    {
+      Astro.props.options.map(({ value, selected, label }) => (
+        <option value={value} selected={selected} set:html={label} />
+      ))
+    }
+  </select>
+</label>
+
+<style>
+  label {
+    --sl-label-icon-size: 0.875rem;
+    --sl-caret-size: 1.25rem;
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+    color: var(--sl-color-gray-1);
+  }
+
+  label:hover {
+    color: var(--sl-color-gray-2);
+  }
+
+  .icon {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+  }
+
+  .label-icon {
+    font-size: var(--sl-label-icon-size);
+    inset-inline-start: 0;
+  }
+
+  .caret {
+    font-size: var(--sl-caret-size);
+    inset-inline-end: 0;
+  }
+
+  @media (min-width: 50rem) {
+    select {
+      font-size: var(--sl-text-sm);
+    }
+  }
+</style>

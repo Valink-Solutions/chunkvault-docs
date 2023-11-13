@@ -12,13 +12,3 @@ At present, YamAPI operates as a straightforward Cloudflare workers API. Our fut
 ## How can we sustain YamAPI?
 
 We are exploring various avenues to find cost-effective hosting solutions as we are committed to building open-source products. Additionally, we are actively seeking partnerships and sponsorships to support the future development and maintenance of YamAPI.
-
-
-
-
-
-
-
-
-
-

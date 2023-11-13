@@ -1,0 +1,243 @@
+@import url("https://fonts.googleapis.com/css2?family=Martian+Mono:wght@100;200;300;400;500;600;700;800&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,
+body {
+  font-family: "Martian Mono", monospace;
+}
+
+/* Scrollbar styles */
+::-webkit-scrollbar-thumb {
+  background: var(--primary-border-color);
+  border-radius: 0;
+  margin: 0 1rem 0 0;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+  margin: 10px 0;
+}
+
+/* light Theme Styles */
+[data-theme="light"] {
+  --accent-color: #3ba265;
+  --primary-border-color: rgba(0, 0, 0, 1);
+  --primary-shadow-color: rgba(0, 0, 0, 1);
+  --text-color: black;
+  --disabled-color: #a9a9a9;
+  --border-width: 4px;
+}
+
+nav {
+  top: 76px !important;
+}
+
+[data-theme="dark"] {
+  --accent-color: #3ba265;
+  --primary-border-color: #3d3a44;
+  --primary-shadow-color: #3d3a44;
+  --text-color: white;
+  --disabled-color: #252329;
+  --border-width: 4px;
+}
+
+/* Toast Styles */
+[data-theme="light"] ._toastItem,
+[data-theme="dark"] ._toastItem,
+[data-theme="light"] ._toastItem {
+  color: var(--base-content) !important;
+}
+
+[data-theme="light"] ._toastItem {
+  background-color: white !important;
+}
+[data-theme="dark"] ._toastItem {
+  background-color: #252329 !important;
+}
+
+/* Button Styles */
+[data-theme="light"] .btn,
+[data-theme="dark"] .btn {
+  border-width: var(--border-width);
+  border-color: var(--primary-border-color);
+  color: var(--base-content) !important;
+  box-shadow: 0px 4px 0px 0px var(--primary-shadow-color);
+  font-weight: 800;
+  fill: var(--primary-border-color);
+}
+
+[data-theme="light"] .btn:disabled,
+[data-theme="dark"] .btn:disabled {
+  color: var(--disabled-color);
+  border-color: var(--disabled-color);
+  box-shadow: 0px 4px 0px 0px var(--disabled-color);
+}
+
+/* Ghost Button Styles */
+[data-theme="light"] .btn-ghost,
+[data-theme="dark"] .btn-ghost {
+  border: none !important;
+  box-shadow: none !important;
+}
+
+/* Button Hover Styles */
+[data-theme="light"] .btn:hover,
+[data-theme="dark"] .btn:hover {
+  color: var(--base-content);
+  border-color: var(--primary-shadow-color) !important;
+}
+
+/* Button Active Styles */
+[data-theme="light"] .btn:active:not(.btn-ghost),
+[data-theme="dark"] .btn:active:not(.btn-ghost) {
+  box-shadow: 0px 2px 0px 0px var(--primary-shadow-color) !important;
+}
+
+[data-theme="light"] .btn-ghost:active,
+[data-theme="dark"] .btn-ghost:active {
+  box-shadow: none !important;
+}
+
+/* Card, Modal, Panel, Collapse Styles */
+[data-theme="light"] .card,
+[data-theme="light"] .modal,
+[data-theme="light"] .panel,
+[data-theme="dark"] .card,
+[data-theme="dark"] .modal,
+[data-theme="dark"] .panel {
+  border-width: var(--border-width) !important;
+  border-color: var(--primary-border-color) !important;
+  box-shadow: 0px 4px 0px 0px var(--primary-shadow-color);
+}
+
+[data-theme="light"] .collapse,
+[data-theme="dark"] .collapse {
+  border: var(--border-width) solid var(--primary-border-color) !important;
+  box-shadow: 0px 4px 0px 0px var(--primary-shadow-color) !important;
+}
+
+/* Input, Textarea Styles */
+[data-theme="light"] .input,
+[data-theme="light"] .textarea,
+[data-theme="dark"] .input,
+[data-theme="dark"] .textarea {
+  border-width: var(--border-width);
+  border-color: var(--primary-border-color) !important;
+  box-shadow: 0px 4px 0px 0px var(--primary-shadow-color);
+  outline: none;
+}
+
+/* Form Input Styles */
+[data-theme="light"] .form-input,
+[data-theme="dark"] .form-input {
+  border-width: var(--border-width);
+  border-color: var(--primary-border-color) !important;
+  box-shadow: 0px 4px 0px 0px var(--primary-shadow-color);
+}
+
+/* Select Styles */
+[data-theme="light"] .select,
+[data-theme="dark"] .select {
+  border-width: var(--border-width);
+  border-color: var(--primary-border-color) !important;
+  box-shadow: 0px 4px 0px 0px var(--primary-shadow-color);
+  outline: none;
+}
+
+[data-theme="light"] .select:disabled,
+[data-theme="dark"] .select:disabled {
+  color: var(--disabled-color) !important;
+  border-color: var(--disabled-color) !important;
+  box-shadow: 0px 4px 0px 0px var(--disabled-color) !important;
+}
+
+/* Checkbox Styles */
+[data-theme="light"] .checkbox,
+[data-theme="dark"] .checkbox {
+  width: 30px;
+  height: 30px;
+  border-width: var(--border-width);
+  border-color: var(--primary-border-color) !important;
+  outline: none !important;
+}
+
+[data-theme="light"] .checkbox:checked,
+[data-theme="dark"] .checkbox:checked {
+  background-color: var(--primary-border-color) !important;
+  border: none;
+  outline: none !important;
+}
+
+[data-theme="light"] .checkbox:checked:after,
+[data-theme="dark"] .checkbox:checked:after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 10px;
+  height: 10px;
+  background-color: var(--base-content);
+  border-radius: 50%;
+  outline: none !important;
+}
+
+/* Dropdown Content Styles */
+[data-theme="light"] .dropdown-content,
+[data-theme="dark"] .dropdown-content {
+  border-width: var(--border-width);
+  border-color: var(--primary-border-color) !important;
+  outline: none !important;
+  box-shadow: 0px 4px 0px 0px var(--primary-shadow-color);
+  gap: 0.25rem;
+}
+
+/* Badge Styles */
+[data-theme="light"] .badge,
+[data-theme="dark"] .badge {
+  border-width: var(--border-width) / 2;
+  border-color: var(--primary-border-color) !important;
+  color: var(--text-color) !important;
+  box-shadow: 0px 2px 0px 0px var(--primary-shadow-color);
+  padding: 10px 5px;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+/* Pagination Styles */
+[data-theme="light"] .pagination,
+[data-theme="dark"] .pagination {
+  height: fit-content;
+  display: flex;
+  flex-direction: row;
+  width: fit-content;
+  border-width: var(--border-width);
+  border-color: var(--primary-border-color) !important;
+  box-shadow: 0px 4px 0px 0px var(--primary-shadow-color);
+}
+
+[data-theme="light"] .pagination .btn,
+[data-theme="dark"] .pagination .btn {
+  height: 3rem;
+  border: none;
+  border-radius: 0rem;
+  box-shadow: none;
+}
+
+[data-theme="light"] .pagination .btn-disabled,
+[data-theme="light"] .pagination .btn-disabled:hover,
+[data-theme="light"] .pagination .btn[disabled],
+[data-theme="light"] .pagination .btn[disabled]:hover {
+  fill: #3ba265;
+}
+
+[data-theme="dark"] .pagination .btn-disabled,
+[data-theme="dark"] .pagination .btn-disabled:hover,
+[data-theme="dark"] .pagination .btn[disabled],
+[data-theme="dark"] .pagination .btn[disabled]:hover {
+  fill: #3ba265;
+}

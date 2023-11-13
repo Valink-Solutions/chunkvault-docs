@@ -1,0 +1,44 @@
+---
+import { Image } from "astro:assets";
+import { Icon } from "@astrojs/starlight/components";
+import ChunkVaultIcon from "../assets/ChunkVault-App-Icon.png";
+---
+
+<div class="flex flex-col md:flex-row items-center justify-between gap-4">
+  <div
+    class="flex flex-col order-last md:order-1 w-full gap-4 z-10 text-center md:text-left text-base-content"
+  >
+    <span class="text-base-content font-bold text-4xl">ChunkVault Docs</span>
+    <span>Get started with ChunkVault, your Minecraft world backup tool.</span>
+
+    <div class="flex flex-col lg:flex-row gap-4">
+      <a href="/teller/01-getting-started" class="btn btn-primary">
+        Getting Started
+        <Icon name="right-arrow" />
+      </a>
+      <a href="/vault/01-getting-started" class="btn">
+        Vault Server
+        <Icon name="rocket" />
+      </a>
+      <a href="/commandblock/01-getting-started" class="btn">
+        CommandBlock Library
+        <Icon name="document" />
+      </a>
+    </div>
+  </div>
+  <Image
+    src={ChunkVaultIcon}
+    class="order-1 md:order-last z-0 w-96 mx-auto"
+    alt="ChunkVault Desktop App Icon"
+  />
+</div>
+
+<style>
+  [data-theme="neubrutalism"] .title {
+    color: black !important;
+  }
+
+  [data-theme="neubrutalism-dark"] .title {
+    color: white !important;
+  }
+</style>
