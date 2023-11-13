@@ -14,7 +14,9 @@ export default defineConfig({
           "https://github.com/Valink-Solutions/chunkvault-docs/tree/master",
       },
       components: {
+        Badge: "./src/components/overrides/Badge.astro",
         ContentPanel: "./src/components/overrides/ContentPanel.astro",
+        EditLink: "./src/components/overrides/EditLink.astro",
         Page: "./src/components/overrides/Page.astro",
         Pagination: "./src/components/overrides/Pagination.astro",
         PageTitle: "./src/components/overrides/PageTitle.astro",
@@ -22,6 +24,8 @@ export default defineConfig({
         PageFrame: "./src/components/overrides/PageFrame.astro",
         ThemeSelect: "./src/components/overrides/ThemeSelect.astro",
         Search: "./src/components/overrides/Search.astro",
+        Sidebar: "./src/components/overrides/Sidebar.astro",
+        SidebarSublist: "./src/components/overrides/SidebarSublist.astro",
         MobileMenuToggle: "./src/components/overrides/MobileMenuToggle.astro",
         // MobileTableOfContents: './src/components/overrides/MobileTableOfContents.astro',
         // ThemeProvider: './src/components/overrides/ThemeProvider.astro',
@@ -53,7 +57,7 @@ export default defineConfig({
           },
         },
         {
-          label: "CommandBlock Library",
+          label: "CommandBlock",
           autogenerate: {
             directory: "commandblock",
           },

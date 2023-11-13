@@ -23,7 +23,7 @@ const pagefindTranslations = {
   <button
     data-open-modal
     disabled
-    class="btn bg-base-100 text-base-content rounded-none"
+    class="bg-base-100 text-base-content rounded-none"
   >
     {
       /* The span is `aria-hidden` because it is not shown on small screens. Instead, the icon label is used for accessibility purposes. */
@@ -40,7 +40,7 @@ const pagefindTranslations = {
   </button>
 
   <dialog style="padding:0" aria-label={t("search.label")}>
-    <div class="dialog-frame sl-flex">
+    <div class="dialog-frame sl-flex card-body">
       {
         /* TODO: Make the layout of this button flexible to accommodate different word lengths. Currently hard-coded for English: “Cancel” */
       }
@@ -97,6 +97,14 @@ const pagefindTranslations = {
         dialog.showModal();
         document.body.toggleAttribute("data-search-modal-open", true);
         this.querySelector("input")?.focus();
+        this.querySelector("input")?.setAttribute(
+          "class",
+          "input input-bordered",
+        );
+        dialog.setAttribute(
+          "class",
+          "card bg-base-100 text-base-content absolute mx-auto top-12",
+        );
         event?.stopPropagation();
         window.addEventListener("click", onClick);
       };
@@ -109,6 +117,7 @@ const pagefindTranslations = {
 
       dialog.addEventListener("close", () => {
         document.body.toggleAttribute("data-search-modal-open", false);
+        dialog.setAttribute("class", "absolute mx-auto my-auto");
         window.removeEventListener("click", onClick);
       });
 
@@ -173,7 +182,6 @@ const pagefindTranslations = {
 
   @media (min-width: 50rem) {
     button[data-open-modal] {
-      border: 4px solid var(--primary-border-color);
       padding-inline-start: 0.75rem;
       padding-inline-end: 1rem;
       background-color: var(--base-100);
@@ -237,7 +245,7 @@ const pagefindTranslations = {
     --pagefind-ui-font: var(--__sl-font);
     --pagefind-ui-background: var(--base-100);
     --pagefind-ui-border: var(--sl-color-gray-5);
-    --pagefind-ui-border-width: 1px;
+    --pagefind-ui-border-width: 4px;
     --sl-search-cancel-space: 5rem;
   }
 
@@ -248,7 +256,6 @@ const pagefindTranslations = {
 
     dialog {
       margin: 4rem auto auto;
-      border-radius: 0.5rem;
       width: 90%;
       max-width: 40rem;
       height: max-content;

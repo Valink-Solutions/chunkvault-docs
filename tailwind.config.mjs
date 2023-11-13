@@ -81,17 +81,17 @@ export default {
       backgroundColor: ["selection"],
       textColor: ["selection"],
       dropShadow: {
-        neu: "0px 4px 0px 0px rgba(0, 0, 0, 1);",
-        "neu-light": "0px 4px 0 #3D3A44",
-        "neu-pressed": "0px 2px 0 rgba(0, 0, 0, 1)",
+        neu: "0px 4px 0px 0px black;",
+        "neu-light": "0px 4px 0 #3d3a44",
+        "neu-pressed": "0px 2px 0 black",
         "neu-pressed-dark": "0px 2px 0 #3D3A44",
-        "neu-card": "0px 4px 0 rgba(0, 0, 0, 1)",
+        "neu-card": "0px 4px 0 black",
       },
       boxShadow: {
         neu: "0px 4px 0px 0px rgba(0, 0, 0, 1);",
-        "neu-light": "0px 4px 0 #3D3A44",
+        "neu-light": "0px 4px 0 #3d3a44",
         "neu-pressed": "0px 2px 0 rgba(0, 0, 0, 1)",
-        "neu-card": "0px 4px 0 rgba(0, 0, 0, 1)",
+        "neu-card": "0px 4px 0 black",
       },
       borderColor: {
         dark: "#3D3A44",

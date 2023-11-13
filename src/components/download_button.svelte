@@ -8,7 +8,11 @@
     let totalDownloads = 0;
 
     function detectEnvironment(nAgt: string) {
-        if (nAgt.includes("Win")) {
+        if (nAgt.includes("Android")) {
+            return 'android';
+        } else if (nAgt.includes("iPhone") || nAgt.includes("iPad")) {
+            return 'ios';
+        } else if (nAgt.includes("Win")) {
             return 'windows';
         } else if (nAgt.includes("Mac")) {
             return 'darwin';
@@ -28,7 +32,10 @@
         // selectedArch = env.arch || archs[0];
     });
 
-    $: downloadUrl = `https://releases.chunkvault.com/download/${selectedPlatform}/${selectedArch}`;
+    $: downloadUrl = selectedPlatform === 'android' || selectedPlatform === 'ios' 
+        ? 'https://github.com/Valink-Solutions/teller/releases/latest' 
+        : `https://releases.chunkvault.com/download/${selectedPlatform}/${selectedArch}`;
+
 
     function getPlatformDisplayName(platform: string) {
         return platform === 'darwin' ? 'macos' : platform;
@@ -36,14 +43,16 @@
 </script>
   
 <div class="flex flex-row justify-center items-center relative text-sm font-semibold h-fit">
-    <a href={downloadUrl} class="btn cursor-point btn-primary">
-        Download
+    <a href={downloadUrl} style="color: black !important;" class="btn cursor-point btn-primary">
+        {selectedPlatform === 'android' || selectedPlatform === 'ios' ? 'Download Desktop App' : 'Download'}
     </a>
-    <div class="flex items-center relative transition-colors">
-        <select bind:value={selectedPlatform} class="select appearance-none text-base-content cursor-pointer">
-            {#each platforms as platform}
-                <option value={platform}>{getPlatformDisplayName(platform)}</option>
-            {/each}
-        </select>
-    </div>
+    {#if selectedPlatform !== 'android' && selectedPlatform !== 'ios'}
+        <div class="flex items-center relative transition-colors">
+            <select bind:value={selectedPlatform} class="select appearance-none text-base-content cursor-pointer">
+                {#each platforms as platform}
+                    <option value={platform}>{getPlatformDisplayName(platform)}</option>
+                {/each}
+            </select>
+        </div>
+    {/if}
 </div>

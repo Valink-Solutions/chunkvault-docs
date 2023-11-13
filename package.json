@@ -1,11 +1,11 @@
 {
   "name": "docs",
   "type": "module",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
-    "build": "astro check && astro build && pnpm run postbuild ",
+    "build": "prettier --write . --plugin=prettier-plugin-astro && astro check && astro build && pnpm run postbuild ",
     "postbuild": "pagefind --site dist/",
     "preview": "astro preview",
     "astro": "astro",

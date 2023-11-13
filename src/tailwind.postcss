@@ -32,10 +32,6 @@ body {
   --border-width: 4px;
 }
 
-nav {
-  top: 76px !important;
-}
-
 [data-theme="dark"] {
   --accent-color: #3ba265;
   --primary-border-color: #3d3a44;
@@ -43,6 +39,56 @@ nav {
   --text-color: white;
   --disabled-color: #252329;
   --border-width: 4px;
+}
+
+nav,
+.right-sidebar-panel {
+  top: 67px !important;
+}
+
+#starlight__mobile-toc {
+  @apply border-4 border-[var(--primary-border-color)] drop-shadow-neu dark:drop-shadow-neu-light bg-base-100 gap-2 !important;
+}
+
+.starlight__sidebar,
+.main-pane {
+  @apply border-4 border-[var(--primary-border-color)] drop-shadow-neu dark:drop-shadow-neu-light;
+}
+
+.main-pane {
+  top: 0px !important;
+}
+
+div .dropdown {
+  @apply shadow-none w-full p-0 !important;
+}
+
+.dropdown li {
+  @apply border-b-2 border-[var(--primary-border-color)] bg-base-200 text-base-content !important;
+}
+
+.toggle {
+  @apply select select-sm !important;
+}
+
+.toggle .caret {
+  @apply hidden;
+}
+
+/* #header-neu {
+  z-index: 1000 !important;
+  height: 76px !important;
+  background: var(--fallback-b1,oklch(var(--b1)/var(--tw-bg-opacity)));
+  border-width: var(--border-width) !important;
+  border-color: var(--primary-border-color) !important;
+  box-shadow: 0px 4px 0px 0px var(--primary-shadow-color) !important;
+  width: 100%;
+  padding: 0.5rem;
+} */
+
+header {
+  padding: 0;
+  width: 100%;
 }
 
 /* Toast Styles */

@@ -1,4 +1,5 @@
 import { getCollection } from "astro:content";
+// @ts-expect-error
 import config from "virtual:starlight/user-config";
 import type { i18nSchemaOutput } from "../schemas/i18n";
 import { createTranslationSystem } from "./createTranslationSystem";
@@ -7,8 +8,9 @@ import { createTranslationSystem } from "./createTranslationSystem";
 let userTranslations: Record<string, i18nSchemaOutput> = {};
 try {
   // Load the user’s i18n collection and ignore the error if it doesn’t exist.
+  const collection = await getCollection("i18n");
   userTranslations = Object.fromEntries(
-    (await getCollection("i18n")).map(({ id, data }) => [id, data] as const),
+    collection.map(({ id, data }) => [id, data as i18nSchemaOutput]),
   );
 } catch {}
 

@@ -11,33 +11,37 @@ import {
   SiteTitle,
   SocialIcons,
   ThemeSelect,
+  MobileMenuToggle,
   // @ts-ignore
 } from "virtual:starlight/components";
 import LogoWrapper from "./LogoWrapper.svelte";
+// import MobileMenuToggle from "./MobileMenuToggle.astro";
 ---
 
-<div class="card bg-base-100 p-2 grid grid-cols-3 w-full items-center z-50">
+<div
+  id="header-neu"
+  class="sticky top-0 bg-base-100 p-2 grid grid-cols-3 w-full items-center z-50"
+>
   <div class="flex flex-row">
     <a href="/" class="inline h-12 items-center no-underline">
-      <!-- <LogoWrapper client:only>
-				<Image src={ChunkVaultLogoLight} alt="" slot="dark" class="h-12 w-60" />
-				<Image src={ChunkVaultLogoDark} alt="" slot="light" class="h-12 w-60" />
-			</LogoWrapper> -->
-
       <div class="flex flex-row items-center gap-4">
         <Image src={VaultIcon} alt="" class="w-10 h-12" />
         <h1 class="text-base-content text-3xl whitespace-nowrap">ChunkVault</h1>
       </div>
     </a>
   </div>
-  <div class="sl-flex">
+  <div
+    class="card justify-self-end md:justify-self-center col-start-3 md:col-start-2 w-14 md:w-[275px] justify-center"
+  >
     <Search {...Astro.props} />
   </div>
-  <div class="sl-hidden md:sl-flex justify-self-end gap-4">
-    <div class="flex flex-row gap-4 items-center">
-      <SocialIcons {...Astro.props} />
+  <div class="grid grid-cols-3 w-full">
+    <div class="hidden md:flex col-start-3 justify-self-end gap-4">
+      <div class="flex flex-row gap-4 items-center">
+        <SocialIcons {...Astro.props} />
+      </div>
+      <ThemeSelect {...Astro.props} />
+      <LanguageSelect {...Astro.props} />
     </div>
-    <ThemeSelect {...Astro.props} />
-    <LanguageSelect {...Astro.props} />
   </div>
 </div>

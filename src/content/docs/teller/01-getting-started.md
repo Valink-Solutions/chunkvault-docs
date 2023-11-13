@@ -7,6 +7,8 @@ description: A step-by-step guide on how to install ChunkVault Desktop.
 
 The desktop client for ChunkVault, this allows for local backups, private server backups and public ChunkVault backups, meaning this client will be an all in one tool allowing for the backing up of minecraft worlds, while The Vault Backend will be the means of securily storing world backups in the cloud.
 
+![ChunkVault Desktop for MacOS](../../../assets/ChunkVault-Desktop-Marketing-SS.png)
+
 ## Prerequisites
 
 ChunkVault Desktop is available for Windows, macOS, and Linux. To install the application, you will need to ensure that you have the following:

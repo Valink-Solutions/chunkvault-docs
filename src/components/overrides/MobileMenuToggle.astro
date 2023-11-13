@@ -12,9 +12,9 @@ const t = useTranslations(Astro.props.locale);
     aria-expanded="false"
     aria-label={t("menuButton.accessibleLabel")}
     aria-controls="starlight__sidebar"
-    class="sl-flex md:sl-hidden"
+    class="md:hidden btn btn-square btn-primary mr-2"
   >
-    <Icon name="bars" />
+    <Icon name="bars" class="text-black fill-black" />
   </button>
 </starlight-menu-button>
 
@@ -32,6 +32,15 @@ const t = useTranslations(Astro.props.locale);
       if (parentNav) {
         parentNav.addEventListener("keyup", (e) => this.closeOnEscape(e));
       }
+
+      // Add event listener to menu items
+      const menuItems = this.querySelectorAll(".menu-item");
+      menuItems.forEach((item) => {
+        item.addEventListener("click", () => {
+          // Trigger the focusout event on the button
+          this.btn.dispatchEvent(new Event("focusout"));
+        });
+      });
     }
 
     setExpanded(expanded: boolean) {
@@ -40,13 +49,14 @@ const t = useTranslations(Astro.props.locale);
     }
 
     toggleExpanded() {
-      this.setExpanded(this.getAttribute("aria-expanded") !== "true");
+      const isCurrentlyExpanded = this.getAttribute("aria-expanded") === "true";
+      this.setExpanded(!isCurrentlyExpanded);
     }
 
     closeOnEscape(e: KeyboardEvent) {
       if (e.code === "Escape") {
         this.setExpanded(false);
-        this.btn.focus();
+        this.btn.click();
       }
     }
   }
@@ -56,17 +66,11 @@ const t = useTranslations(Astro.props.locale);
 
 <style>
   button {
-    position: fixed;
-    top: calc((var(--sl-nav-height) - var(--sl-menu-button-size)) / 2);
-    inset-inline-end: var(--sl-nav-pad-x);
     z-index: var(--sl-z-index-navbar);
-    border: 0;
-    border-radius: 50%;
-    width: var(--sl-menu-button-size);
-    height: var(--sl-menu-button-size);
     padding: 0.5rem;
     background-color: var(--sl-color-white);
-    color: var(--sl-color-black);
+    border: 4px solid var(--primary-border-color);
+    color: black !important;
     box-shadow: var(--sl-shadow-md);
     cursor: pointer;
   }

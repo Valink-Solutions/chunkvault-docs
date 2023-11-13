@@ -1,27 +1,33 @@
 ---
 import type { Props } from "@astrojs/starlight/props";
 
-// @ts-ignore
-import { MobileMenuToggle } from "virtual:starlight/components";
+import MobileMenuToggle from "./MobileMenuToggle.astro";
 
 const { hasSidebar, locale } = Astro.props;
 ---
 
 <div class="page bg-base-100 text-base-content">
-  <header class="sticky top-0 z-50"><slot name="header" /></header>
-  {
-    hasSidebar && (
-      <nav class="sidebar" aria-label={"sidebarNav.accessibleLabel"}>
-        <MobileMenuToggle {...Astro.props} />
-        <div id="starlight__sidebar" class="sidebar-pane">
-          <div class="sidebar-content flex flex-col gap-4">
-            <slot name="sidebar" />
+  <div
+    class="flex flex-row items-center border-4 border-[var(--primary-border-color)] bg-base-100 lg:shadow-neu lg:dark:shadow-neu-light sticky top-0 z-20 w-full"
+  >
+    <header class="z-50"><slot name="header" /></header>
+    {
+      hasSidebar && (
+        <nav
+          class="sidebar bg-base-100"
+          aria-label={"sidebarNav.accessibleLabel"}
+        >
+          <MobileMenuToggle {...Astro.props} />
+          <div id="starlight__sidebar" class="sidebar-pane">
+            <div class="sidebar-content flex flex-col gap-4">
+              <slot name="sidebar" />
+            </div>
           </div>
-        </div>
-      </nav>
-    )
-  }
-  <div class="main-frame -mt-[170px]"><slot /></div>
+        </nav>
+      )
+    }
+  </div>
+  <div class="main-frame -mt-[80px]"><slot /></div>
 </div>
 
 <style>

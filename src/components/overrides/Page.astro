@@ -81,7 +81,12 @@ const pagefindEnabled =
   <body class="bg-base-100 text-base-content">
     <SkipLink {...Astro.props} />
     <PageFrame {...Astro.props}>
-      <Header slot="header" {...Astro.props} client:only />
+      <Header
+        class="sticky top-0 z-50"
+        slot="header"
+        {...Astro.props}
+        client:only
+      />
       {Astro.props.hasSidebar && <Sidebar slot="sidebar" {...Astro.props} />}
       <TwoColumnContent {...Astro.props}>
         <PageSidebar slot="right-sidebar" {...Astro.props} />
