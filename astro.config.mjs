@@ -3,6 +3,7 @@ import starlight from "@astrojs/starlight";
 import svelte from "@astrojs/svelte";
 
 import tailwind from "@astrojs/tailwind";
+import autoprefixer from "autoprefixer";
 
 // https://astro.build/config
 export default defineConfig({
@@ -78,6 +79,13 @@ export default defineConfig({
   build: {
     rollupOptions: {
       external: ["@pagefind/default-ui/css/ui.css"],
+    },
+  },
+  vite: {
+    postcss: {
+      plugins: [
+        autoprefixer({}), // add options if needed
+      ],
     },
   },
 });
